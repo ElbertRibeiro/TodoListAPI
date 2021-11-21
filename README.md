@@ -25,7 +25,7 @@ It uses `run-curl-tests.rb` which runs each command defined in
 
 The REST API to the example app is described below.
 
-## Get list of Things
+## Get list of taskss
 
 ### Request
 
@@ -59,12 +59,12 @@ The REST API to the example app is described below.
     Status: 201 Created
     Connection: close
     Content-Type: application/json
-    Location: /thing/1
+    Location: /tasks/1
     Content-Length: 36
 
     {"id":1,"name":"Foo","status":"new"}
 
-## Get a specific Thing
+## Get a specific Tasks
 
 ### Request
 
@@ -83,13 +83,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Foo","status":"new"}
 
-## Get a non-existent Thing
+## Get a non-existent tasks
 
 ### Request
 
-`GET /thing/id`
+`GET /tasks/id`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/9999
+    curl -i -H 'Accept: application/json' http://localhost:7000/tasks/9999
 
 ### Response
 
@@ -102,13 +102,13 @@ The REST API to the example app is described below.
 
     {"status":404,"reason":"Not found"}
 
-## Create another new Thing
+## Create another new tasks
 
 ### Request
 
-`POST /thing/`
+`POST /tasks/`
 
-    curl -i -H 'Accept: application/json' -d 'name=Bar&junk=rubbish' http://localhost:7000/thing
+    curl -i -H 'Accept: application/json' -d 'name=Bar&junk=rubbish' http://localhost:7000/tasks
 
 ### Response
 
@@ -117,18 +117,18 @@ The REST API to the example app is described below.
     Status: 201 Created
     Connection: close
     Content-Type: application/json
-    Location: /thing/2
+    Location: /tasks/2
     Content-Length: 35
 
     {"id":2,"name":"Bar","status":null}
 
-## Get list of Things again
+## Get list of taskss again
 
 ### Request
 
-`GET /thing/`
+`GET /tasks/`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
+    curl -i -H 'Accept: application/json' http://localhost:7000/tasks/
 
 ### Response
 
@@ -141,13 +141,13 @@ The REST API to the example app is described below.
 
     [{"id":1,"name":"Foo","status":"new"},{"id":2,"name":"Bar","status":null}]
 
-## Change a Thing's state
+## Change a tasks's state
 
 ### Request
 
-`PUT /thing/:id/status/changed`
+`PUT /tasks/:id/status/changed`
 
-    curl -i -H 'Accept: application/json' -X PUT http://localhost:7000/thing/1/status/changed
+    curl -i -H 'Accept: application/json' -X PUT http://localhost:7000/tasks/1/status/changed
 
 ### Response
 
@@ -160,13 +160,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Foo","status":"changed"}
 
-## Get changed Thing
+## Get changed tasks
 
 ### Request
 
-`GET /thing/id`
+`GET /tasks/id`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' http://localhost:7000/tasks/1
 
 ### Response
 
@@ -179,13 +179,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Foo","status":"changed"}
 
-## Change a Thing
+## Change a tasks
 
 ### Request
 
-`PUT /thing/:id`
+`PUT /tasks/:id`
 
-    curl -i -H 'Accept: application/json' -X PUT -d 'name=Foo&status=changed2' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' -X PUT -d 'name=Foo&status=changed2' http://localhost:7000/tasks/1
 
 ### Response
 
@@ -198,13 +198,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Foo","status":"changed2"}
 
-## Attempt to change a Thing using partial params
+## Attempt to change a tasks using partial params
 
 ### Request
 
-`PUT /thing/:id`
+`PUT /tasks/:id`
 
-    curl -i -H 'Accept: application/json' -X PUT -d 'status=changed3' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' -X PUT -d 'status=changed3' http://localhost:7000/tasks/1
 
 ### Response
 
@@ -217,13 +217,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Foo","status":"changed3"}
 
-## Attempt to change a Thing using invalid params
+## Attempt to change a tasks using invalid params
 
 ### Request
 
-`PUT /thing/:id`
+`PUT /tasks/:id`
 
-    curl -i -H 'Accept: application/json' -X PUT -d 'id=99&status=changed4' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' -X PUT -d 'id=99&status=changed4' http://localhost:7000/tasks/1
 
 ### Response
 
@@ -236,13 +236,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Foo","status":"changed4"}
 
-## Change a Thing using the _method hack
+## Change a tasks using the _method hack
 
 ### Request
 
-`POST /thing/:id?_method=POST`
+`POST /tasks/:id?_method=POST`
 
-    curl -i -H 'Accept: application/json' -X POST -d 'name=Baz&_method=PUT' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' -X POST -d 'name=Baz&_method=PUT' http://localhost:7000/tasks/1
 
 ### Response
 
@@ -255,13 +255,13 @@ The REST API to the example app is described below.
 
     {"id":1,"name":"Baz","status":"changed4"}
 
-## Change a Thing using the _method hack in the url
+## Change a tasks using the _method hack in the url
 
 ### Request
 
-`POST /thing/:id?_method=POST`
+`POST /tasks/:id?_method=POST`
 
-    curl -i -H 'Accept: application/json' -X POST -d 'name=Qux' http://localhost:7000/thing/1?_method=PUT
+    curl -i -H 'Accept: application/json' -X POST -d 'name=Qux' http://localhost:7000/tasks/1?_method=PUT
 
 ### Response
 
@@ -274,13 +274,13 @@ The REST API to the example app is described below.
 
     {"status":404,"reason":"Not found"}
 
-## Delete a Thing
+## Delete a tasks
 
 ### Request
 
-`DELETE /thing/id`
+`DELETE /tasks/id`
 
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/
+    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/tasks/1/
 
 ### Response
 
@@ -290,13 +290,13 @@ The REST API to the example app is described below.
     Connection: close
 
 
-## Try to delete same Thing again
+## Try to delete same tasks again
 
 ### Request
 
-`DELETE /thing/id`
+`DELETE /tasks/id`
 
-    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/thing/1/
+    curl -i -H 'Accept: application/json' -X DELETE http://localhost:7000/tasks/1/
 
 ### Response
 
@@ -309,13 +309,13 @@ The REST API to the example app is described below.
 
     {"status":404,"reason":"Not found"}
 
-## Get deleted Thing
+## Get deleted tasks
 
 ### Request
 
-`GET /thing/1`
+`GET /tasks/1`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' http://localhost:7000/tasks/1
 
 ### Response
 
@@ -328,13 +328,13 @@ The REST API to the example app is described below.
 
     {"status":404,"reason":"Not found"}
 
-## Delete a Thing using the _method hack
+## Delete a Tasks using the _method hack
 
 ### Request
 
-`DELETE /thing/id`
+`DELETE /tasks/id`
 
-    curl -i -H 'Accept: application/json' -X POST -d'_method=DELETE' http://localhost:7000/thing/2/
+    curl -i -H 'Accept: application/json' -X POST -d'_method=DELETE' http://localhost:7000/tasks/2/
 
 ### Response
 
