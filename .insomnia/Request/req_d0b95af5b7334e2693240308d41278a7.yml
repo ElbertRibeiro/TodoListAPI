@@ -1,0 +1,21 @@
+_id: req_d0b95af5b7334e2693240308d41278a7
+type: Request
+parentId: wrk_63d29ce59280491c906eff95b0fc3080
+modified: 1637516287930
+created: 1637514756485
+url: localhost:3000/tasks
+name: List create
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1637514756485
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

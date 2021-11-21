@@ -1,0 +1,21 @@
+_id: req_54635f64827246e89cdbe9e88fa8e51e
+type: Request
+parentId: wrk_63d29ce59280491c906eff95b0fc3080
+modified: 1637513090255
+created: 1637513080555
+url: localhost:3000/teste
+name: Not found
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1637513080555
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

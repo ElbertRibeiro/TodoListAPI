@@ -1,0 +1,21 @@
+_id: req_9abce6bada3b43d5a79f494c8358fc23
+type: Request
+parentId: wrk_63d29ce59280491c906eff95b0fc3080
+modified: 1637532351269
+created: 1637526852106
+url: localhost:3000/tasks/619ac24687c302b2616e61f9
+name: View Tasks
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1637526852106
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

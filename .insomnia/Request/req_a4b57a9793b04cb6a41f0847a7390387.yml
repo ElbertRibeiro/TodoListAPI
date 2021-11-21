@@ -1,0 +1,35 @@
+_id: req_a4b57a9793b04cb6a41f0847a7390387
+type: Request
+parentId: wrk_63d29ce59280491c906eff95b0fc3080
+modified: 1637534681576
+created: 1637532497259
+url: localhost:3000/tasks/619ac24687c302b2616e61f9
+name: update task
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "teste",
+    	"status": [
+    		"completed"
+    	],
+    	"_id": "619ac24687c302b2616e61f9",
+    	"Created_date": "2021-11-21T22:03:50.943Z",
+    	"__v": 0
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_b1e866af2914487ebb9d92dc8eab222b
+authentication: {}
+metaSortKey: -1637532497259
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

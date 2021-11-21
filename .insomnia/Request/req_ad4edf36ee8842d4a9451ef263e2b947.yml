@@ -1,0 +1,35 @@
+_id: req_ad4edf36ee8842d4a9451ef263e2b947
+type: Request
+parentId: wrk_63d29ce59280491c906eff95b0fc3080
+modified: 1637532509061
+created: 1637514736841
+url: localhost:3000/tasks
+name: Create task
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "teste",
+    	"status": [
+    		"completed"
+    	],
+    	"_id": "619ac24687c302b2616e61f9",
+    	"Created_date": "2021-11-21T22:03:50.943Z",
+    	"__v": 0
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6ca88a3555d446f28f610d781f22e2ec
+authentication: {}
+metaSortKey: -1637514736841
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

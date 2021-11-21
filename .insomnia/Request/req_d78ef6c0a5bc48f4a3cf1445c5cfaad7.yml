@@ -1,0 +1,26 @@
+_id: req_d78ef6c0a5bc48f4a3cf1445c5cfaad7
+type: Request
+parentId: wrk_63d29ce59280491c906eff95b0fc3080
+modified: 1637526837586
+created: 1637505910328
+url: localhost:3000/tasks/619a76da2e242daf87f5ce7e
+name: Delete tasks
+description: ""
+method: DELETE
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_e02c4c895cb04fe2a0714e062e5bec0a
+authentication: {}
+metaSortKey: -1637505910328
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
