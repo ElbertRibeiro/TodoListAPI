@@ -19,7 +19,7 @@ It uses `run-curl-tests.rb` which runs each command defined in
 
 ## Run the app
 
-    npm run server.js
+    npm run start
 
 # REST API
 
@@ -50,7 +50,7 @@ The REST API to the example app is described below.
 
 `POST /tasks/`
 
-    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost:3000/thing
+    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost:3000/tasks
 
 ### Response
 
@@ -68,9 +68,9 @@ The REST API to the example app is described below.
 
 ### Request
 
-`GET /thing/id`
+`GET /tasks/{id}`
 
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
+    curl -i -H 'Accept: application/json' http://localhost:3000/tasks/{id}
 
 ### Response
 
